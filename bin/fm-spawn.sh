@@ -137,7 +137,7 @@ launch_template() {
       if [ "$kind" = secondmate ]; then
         printf '%s' 'pi "$(cat __BRIEF__)"'
       else
-        printf '%s' 'pi -e __PIEXT__ "$(cat __BRIEF__)"'
+        printf '%s' 'pi -e __PIEXT__ --model opencode-go/deepseek-v4-flash "$(cat __BRIEF__)"'
       fi
       ;;
     *) return 1 ;;
