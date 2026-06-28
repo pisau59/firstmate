@@ -134,6 +134,10 @@ launch_template() {
       ;;
     opencode) printf '%s' 'OPENCODE_CONFIG_CONTENT='\''{"permission":{"*":"allow"}}'\'' opencode --prompt "$(cat __BRIEF__)"' ;;
     pi)
+      # Ship and scout crewmates are pinned to deepseek-v4-flash so the
+      # orchestrator runs on its default (usually a more capable model) while
+      # crewmates use the cheaper model. Secondmates keep the default because
+      # they are themselves orchestrators running in their own home.
       if [ "$kind" = secondmate ]; then
         printf '%s' 'pi "$(cat __BRIEF__)"'
       else
