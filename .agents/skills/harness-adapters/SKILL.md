@@ -108,6 +108,7 @@ If a pane shows the exit banner, relaunch with `--continue` to resume the sessio
 Pi has no permission system, so crewmates are always autonomous.
 Keep the brief as one positional argument.
 Multiple positional args become separate queued messages; `fm-spawn`'s template already does this correctly.
+Non-secondmate ship/scout crewmates are spawned with `--model opencode-go/deepseek-v4-flash` to pin them to a cheaper model while the orchestrator and secondmates keep their default model. This flag is added by the launch template and is not configurable per-spawn.
 
 Project trust dialog can appear on the first pi run in any not-yet-trusted directory, observed even on clean worktrees.
 Accept with Enter.
